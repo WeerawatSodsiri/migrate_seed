@@ -3,18 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ProductType;
+use App\Models\Product;
 
-class ProductTypeController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    // public function __construct()
+    // {
+    // $this->middleware('auth', ['only' => ['create', 'store', 'edit',
+    // 'delete']]);
+    // // or
+    // $this->middleware('auth', ['except' => ['index', 'show']]);
     
+    // }
+
+
     public function index()
     {
-        $product_ty = ProductType::all();
-        return view('product_type.index',compact('product_ty'));
+        $product = Product::all();
+        return view('product.index',compact('product'));
     }
 
     /**
@@ -62,7 +71,7 @@ class ProductTypeController extends Controller
      */
     public function destroy(string $id)
     {
-        ProductType::destroy($id);
+        Product::destroy($id);
         return back();
     }
 }

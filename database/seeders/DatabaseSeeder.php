@@ -22,6 +22,29 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'weerawat.so1@kkumail.com',
         //     'password' => Hash::make ('wordpass'),
         // ]);
+        //customer
+
+        DB::table('users') ->insert ([
+            'name' => 'customer 1',
+            'email' => 'customer@gmail.com',
+            'password' => Hash::make('wordpass'),
+            'user_type' => 0
+            ]);
+            //Empoyee
+            DB::table('users') ->insert ([
+            'name' => 'Employee 1',
+            'email' => 'emp1@gmail.com',
+            'password' => Hash::make('wordpass'),
+            'user_type' => 1
+            ]);
+            //Admin
+            DB::table('users') ->insert ([
+            'name' => 'Admin 1',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('wordpass'),
+            'user_type' => 0
+            ]);
+            
         $this->call([
             ProductTypesTableSeeder::class,
             ProductsTableSeeder::class,
